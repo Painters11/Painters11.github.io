@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import Header from './Components/Header/Header.js'
+import Header from './Components/Layout/layout.js'
 
 function App() {
     return (
 
       <Fragment>
-        <Header />
+        <Layout />
       </Fragment>
     
 
