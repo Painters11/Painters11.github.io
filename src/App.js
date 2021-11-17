@@ -8,17 +8,4 @@ const App = props => (
   </Fragment>
 )
 
-<<<<<<< HEAD
 export default App
-=======
-      <Fragment>
-        <Header />
-        <Canvas />
-      </Fragment>
-    
-
-    )
-  }
-
-export default App;
->>>>>>> main
