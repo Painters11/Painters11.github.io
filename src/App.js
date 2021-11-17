@@ -2,9 +2,15 @@ import React, { Fragment } from 'react'
 import Header from './Components/Header/Header.js'
 import Canvas from './Components/Canvas/Canvas.js'
 
-function App() {
-    return (
+const App = props => (
+  <Fragment>
+    <Layout />
+  </Fragment>
+)
 
+<<<<<<< HEAD
+export default App
+=======
       <Fragment>
         <Header />
         <Canvas />
@@ -15,3 +21,4 @@ function App() {
   }
 
 export default App;
+>>>>>>> main
