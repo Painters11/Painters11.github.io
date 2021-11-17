@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
+import Header from './Components/Header/Header.js'
 
 function App() {
     return (
+
       <Fragment>
-        <header>
-          Paint App
-        </header>
+        <Header />
       </Fragment>
+    
 
     )
   }
