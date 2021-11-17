@@ -7,3 +7,5 @@ function Home(props) {
     </Fragment>
   )
 }
+
+export default Home
