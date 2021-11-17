@@ -26,5 +26,11 @@ const App = props => (
     <Layout />
   </Fragment>
 )
+<<<<<<< HEAD
 >>>>>>> aa925a2 (Odd merge issue; resolving)
 export default App;
+=======
+
+export default App;
+
+>>>>>>> ab96345 (Merge issue again)
