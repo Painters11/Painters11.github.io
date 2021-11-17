@@ -1,15 +1,10 @@
 import React, { Fragment } from 'react'
-import Header from './Components/Header/Header.js'
+import Layout from './Components/Layout/layout.js'
 
-function App() {
-    return (
+const App = props => (
+  <Fragment>
+    <Layout />
+  </Fragment>
+)
 
-      <Fragment>
-        <Header />
-      </Fragment>
-    
-
-    )
-  }
-
-export default App;
+export default App
