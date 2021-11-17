@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Components/page/Home'
@@ -15,4 +16,15 @@ function App(props) {
     )
   }
 
+=======
+import React, { Fragment } from 'react'
+import Header from './Components/Header/Header.js'
+import Canvas from './Components/Canvas/Canvas.js'
+
+const App = props => (
+  <Fragment>
+    <Layout />
+  </Fragment>
+)
+>>>>>>> aa925a2 (Odd merge issue; resolving)
 export default App;
