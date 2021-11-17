@@ -8,5 +8,5 @@ const App = props => (
   </Fragment>
 )
 
-export default App;
+export default App
 
