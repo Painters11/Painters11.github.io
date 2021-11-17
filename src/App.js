@@ -7,9 +7,6 @@ const App = props => (
     <Layout />
   </Fragment>
 )
-<<<<<<< HEAD
-export default App;
-=======
 
-export default App
->>>>>>> dev
+export default App;
+
