@@ -7,9 +7,7 @@ function Layout(props) {
   return (
     <Fragment>
       <Header />
-        <div>
-          <slot />
-        </div>
+        <slot />
       <Footer />
     </Fragment>
   )

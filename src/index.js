@@ -9,6 +9,9 @@ const rootElement = document.getElementById("root")
 render(
   <Router>
     <App />
+    <Route>
+      <Route exact path='/' component={Home} />
+    </Route>
   </Router>, 
   rootElement
 )
