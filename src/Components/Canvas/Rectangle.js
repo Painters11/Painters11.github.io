@@ -6,6 +6,13 @@ const Canvas = () => {
 
     const canvasRef = useRef(null)
     const ctxRef = useRef(null)
+    const startXRef = useRef(null)
+    const startYRef = useRef(null)
+    const endXRef = useRef(null)
+    const endYRef = useRef(null)
+
+    
+
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -33,6 +40,10 @@ const Canvas = () => {
         const pos = getMousePos(canvasRef.current, event)
         ctxRef.current.beginPath()
         ctxRef.current.moveTo(pos.x, pos.y)
+        const startX = pos.x
+        const startY = pos.y
+        startXRef.current = startX
+        startYRef.current = startY
         setDrawing(true)
 
     }
@@ -41,14 +52,20 @@ const Canvas = () => {
         if(!drawing) {
             return
         }
-        const pos = getMousePos(canvasRef.current, event)     
-        ctxRef.current.lineTo(pos.x, pos.y)
-        ctxRef.current.stroke()
-
+        
 
     }
 
-    const handleMouseUp = () => {
+    const handleMouseUp = (event) => {
+        const pos = getMousePos(canvasRef.current, event)
+        const endX = pos.x
+        const endY = pos.y
+        endXRef.current = endX
+        endYRef.current = endY
+        const width = endXRef.current - startXRef.current
+        const height = endYRef.current - startYRef.current
+      
+        ctxRef.current.strokeRect(startXRef.current, startYRef.current, width, height)
         ctxRef.current.closePath()
         setDrawing(false)
     }
