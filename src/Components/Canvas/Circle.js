@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 
 
-const Rectangle = () => {
+const Circle = () => {
     const [drawing, setDrawing] = useState(false)
 
     const canvasRef = useRef(null)
@@ -25,6 +25,7 @@ const Rectangle = () => {
         ctx.scale(2, 2)
         ctx.lineCap = "round"
         ctx.strokeStyle = "black"
+        ctx.fillStyle = "white"
         ctx.lineWidth = 5
         ctxRef.current = ctx
         
@@ -52,8 +53,7 @@ const Rectangle = () => {
         if(!drawing) {
             return
         }
-        
-
+        // console.log(event.clientX, event.clientY)
     }
 
     const handleMouseUp = (event) => {
@@ -62,10 +62,14 @@ const Rectangle = () => {
         const endY = pos.y
         endXRef.current = endX
         endYRef.current = endY
-        const width = endXRef.current - startXRef.current
-        const height = endYRef.current - startYRef.current
-      
-        ctxRef.current.strokeRect(startXRef.current, startYRef.current, width, height)
+        // const xCoord = endXRef.current - startXRef.current
+        // const yCoord = endYRef.current - startYRef.current
+        const radius = Math.sqrt(Math.pow((startXRef.current - endXRef.current), 2) + Math.pow((startYRef.current - endYRef.current), 2))
+        console.log(radius)
+        ctxRef.current.arc(startXRef.current, startYRef.current, radius, 0, 2 * Math.PI)
+        ctxRef.current.stroke()
+        ctxRef.current.fill()
+
         ctxRef.current.closePath()
         setDrawing(false)
     }
@@ -84,4 +88,4 @@ const Rectangle = () => {
 )
 }
 
-export default Rectangle
+export default Circle

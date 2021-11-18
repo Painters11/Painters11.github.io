@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import Header from './Components/Header/Header.js'
 // import Canvas from './Components/Canvas/Canvas.js'
-import Rectangle from './Components/Canvas/Rectangle.js'
+// import Rectangle from './Components/Canvas/Rectangle.js'
+import Circle from './Components/Canvas/Circle.js'
 
 function App() {
     return (
@@ -9,7 +10,8 @@ function App() {
       <Fragment>
         <Header />
         {/* <Canvas /> */}
-        <Rectangle />
+        {/* <Rectangle /> */}
+        <Circle />
       </Fragment>
     
 
