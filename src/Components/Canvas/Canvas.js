@@ -1,70 +1,65 @@
-import React, { useEffect, useState } from 'react'
-import rough from 'roughjs/bundled/rough.esm'
+import React, { useRef, useEffect, useState } from 'react'
 
-const generator = rough.generator()
-const drawLine = (x1, y1, x2, y2) => {
-    const line = generator.line(x1, y1, x2, y2)
-    return { x1, x2, y1, y2, line }
-}
-// start to build out rectangles
-// const drawRect = (x1, y1, x2, y2) => {
-//     const line = generator.rectangle(x1, y1, x2-x1, y2-y1)
-//     return { x1, x2, y1, y2, line }
-// }
 
 const Canvas = () => {
-    const [drawings, setDrawings] = useState([])
-    const [draw, setDraw] = useState(false)
+    const [drawing, setDrawing] = useState(false)
+
+    const canvasRef = useRef(null)
+    const ctxRef = useRef(null)
+
     useEffect(() => {
-        const canvas = document.getElementById('canvas')
-        const ctx = canvas.getContext('2d')
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        const canvas = canvasRef.current
+        canvas.width = window.innerWidth * 2
+        canvas.height = window.innerHeight * 2
+        canvas.style.width = `${window.innerWidth}px`
+        canvas.style.height = `${window.innerHeight}px`
 
-        const roughCanvas = rough.canvas(canvas)
-
-        drawings.forEach(({ line }) => roughCanvas.draw(line))
-
-    }, [drawings])
-    
-    
-
-    const handleMouseDown = (event) =>{
-        setDraw(true)
-        const { clientX, clientY } = event
+        const ctx = canvas.getContext("2d")
+        ctx.scale(2, 2)
+        ctx.lineCap = "round"
+        ctx.strokeStyle = 'black'
+        ctx.lineWidth = 10
+        ctxRef.current = ctx
+        console.log(canvas.getBoundingClientRect())
         
-        const drawing = drawLine(clientX, clientY, clientX, clientY)
-        setDrawings(prevState => [...prevState, drawing])
-    }
-    const handleMouseMove = (event) => {
-        const { clientX, clientY } = event
-        if(draw) {
-            const finalDrawing  = drawings.length - 1
-            const { x1, y1 } = drawings[finalDrawing]
-            const drawing = drawLine(x1, y1, clientX, clientY)
-
-            const drawingsCopy = [...drawings]
-            drawingsCopy[finalDrawing] = drawing
-            setDrawings(drawingsCopy)
-
-
+    }, [])
+    const getMousePos = (canvas, e) => {
+        const rect = canvasRef.current.getBoundingClientRect();
+        return {
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
         }
-      
+    }
+    const handleMouseDown = (event) => {
+        const pos = getMousePos(canvasRef.current, event)
+        ctxRef.current.beginPath()
+        ctxRef.current.moveTo(pos.x, pos.y)
+        setDrawing(true)
 
     }
 
-    const handleMouseUp = (event) => {
-        setDraw(false)
-        console.log(draw)
+    const handleMouseMove = (event) => {
+        if(!drawing) {
+            return
+        }
+        const pos = getMousePos(canvasRef.current, event)     
+        ctxRef.current.lineTo(pos.x, pos.y)
+        ctxRef.current.stroke()
+
+
+    }
+
+    const handleMouseUp = () => {
+        ctxRef.current.closePath()
+        setDrawing(false)
     }
 
     return (
             <canvas id="canvas"
-            width={window.innerWidth} 
-            height={window.innerHeight}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-
+            ref={canvasRef}
             
             >
             Paint
