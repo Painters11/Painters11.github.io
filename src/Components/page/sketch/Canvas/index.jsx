@@ -14,7 +14,7 @@ const drawLine = (x1, y1, x2, y2) => {
 //     return { x1, x2, y1, y2, line }
 // }
 
-const Canvas = () => {
+const Canvas = (props) => {
   const [drawings, setDrawings] = useState([])
   const [draw, setDraw] = useState(false)
   useEffect(() => {
@@ -54,9 +54,6 @@ const Canvas = () => {
 
   return (
     <Layout>
-      {/* <Line /> */}
-      {/* <Rectangle /> */}
-      {/* <Circle /> */}
       <ToolSwitcher />
       <canvas id="canvas"
         width={window.innerWidth} 
