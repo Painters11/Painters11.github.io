@@ -1,69 +1,66 @@
-import React, { useEffect, useState } from 'react'
-import rough from 'roughjs/bundled/rough.esm'
+import React, { Component } from 'react'
 import Layout from '../../../shared/Layout'
 import ToolSwitcher from '../Tools/ToolSwitcher.js'
+import Pen from '../Pen.js'
+import Rectangle from '../Rectangle.js'
+import Circle from '../Circle.js'
 
-const generator = rough.generator()
-const drawLine = (x1, y1, x2, y2) => {
-  const line = generator.line(x1, y1, x2, y2)
-  return { x1, x2, y1, y2, line }
-}
-// start to build out rectangles
-// const drawRect = (x1, y1, x2, y2) => {
-//     const line = generator.rectangle(x1, y1, x2-x1, y2-y1)
-//     return { x1, x2, y1, y2, line }
-// }
 
-const Canvas = (props) => {
-  const [drawings, setDrawings] = useState([])
-  const [draw, setDraw] = useState(false)
-  useEffect(() => {
-    const canvas = document.getElementById('canvas')
-    const ctx = canvas.getContext('2d')
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+class Canvas extends Component {
+    constructor (props) {
+        super(props)
 
-    const roughCanvas = rough.canvas(canvas)
-
-    drawings.forEach(({ line }) => roughCanvas.draw(line))
-  }, [drawings])
-
-  const handleMouseDown = (event) =>{
-    setDraw(true)
-    const { clientX, clientY } = event
-    
-    const drawing = drawLine(clientX, clientY, clientX, clientY)
-    setDrawings(prevState => [...prevState, drawing])
-  }
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event
-    if(draw) {
-      const finalDrawing  = drawings.length - 1
-      const { x1, y1 } = drawings[finalDrawing]
-      const drawing = drawLine(x1, y1, clientX, clientY)
-
-      const drawingsCopy = [...drawings]
-      drawingsCopy[finalDrawing] = drawing
-      setDrawings(drawingsCopy)
+        this.state = {
+            penSelected: false,
+            rectangleSelected: false,
+            circleSelected: false
+            
+        }
     }
-  }
 
-  const handleMouseUp = (event) => {
-    setDraw(false)
-    console.log(draw)
-  }
 
-  return (
-    <Layout>
-      <ToolSwitcher />
-      <canvas id="canvas"
-        width={window.innerWidth} 
-        height={window.innerHeight}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}        onMouseUp={handleMouseUp}
-      >
-      </canvas>
-    </Layout>
-  )
+   
+    componentDidUpdate(prevProps) {
+        const { toolSelected } = this.props
+        if(toolSelected !== prevProps.toolSelected) {
+            console.log(toolSelected)
+            if(toolSelected === 'Pen'){
+                this.setState({ 
+                    penSelected: true,
+                    rectangleSelected: false,
+                    circleSelected: false
+                })
+            } else if(toolSelected === 'Rectangle'){
+                this.setState({ 
+                    penSelected: false,
+                    rectangleSelected: true,
+                    circleSelected: false
+                })
+            } else if (toolSelected === 'Circle') {
+                this.setState({ 
+                    penSelected: false,
+                    rectangleSelected: false,
+                    circleSelected: true
+                })
+            }
+        }
+        
+    }
+
+   
+
+    render() {
+        
+        return (
+            <Layout>
+              <ToolSwitcher />
+                <Pen isSelected={this.state.penSelected}/>
+                <Rectangle isSelected={this.state.rectangleSelected}/>
+                <Circle isSelected={this.state.circleSelected}/>
+            </Layout>
+        )
+    }
+
 }
 
 export default Canvas
