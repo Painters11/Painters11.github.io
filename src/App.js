@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react'
-import { useRoutes } from 'hookrouter'
-import routes from './router'
-import Layout from './components/Layout/layout.js'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './components/page/home/home.jsx'
+import Canvas from './components/page/canvas/Canvas.js'
+import './App.css'
 
-function App() {
-  const routeResult = useRoutes(routes)
+function App(props) {
   return (
-    <Fragment>
-      <Layout />
-    </Fragment>,
-    routeResult
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/canvas' element={<Canvas />} />
+      </Routes>
+    </Router>
   )
 }
 
