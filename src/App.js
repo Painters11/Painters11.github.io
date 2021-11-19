@@ -15,4 +15,20 @@ function App(props) {
   )
 }
 
+<<<<<<< HEAD
 export default App
+=======
+      <Fragment>
+        <Header />
+        {/* <Line /> */}
+        {/* <Rectangle /> */}
+        {/* <Circle /> */}
+        <ToolSwitcher />
+      </Fragment>
+    
+
+    )
+  }
+
+export default App;
+>>>>>>> just-canvas
