@@ -51,9 +51,9 @@ class Canvas extends Component {
         
         return (
             <>
-                <Pen isSelected={this.state.penSelected}/>
-                <Rectangle isSelected={this.state.rectangleSelected}/>
-                <Circle isSelected={this.state.circleSelected}/>
+                {this.state.penSelected ? <Pen isSelected={this.state.penSelected}/> : ''}
+                {this.state.rectangleSelected ? <Rectangle isSelected={this.state.rectangleSelected}/> : ''}
+                {this.state.circleSelected ? <Circle isSelected={this.state.circleSelected}/> : ''}
             </>
         )
     }
