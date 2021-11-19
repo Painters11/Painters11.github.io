@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import rough from 'roughjs/bundled/rough.esm'
+import Layout from '../../../shared/Layout'
+import ToolSwitcher from '../Tools/ToolSwitcher.js'
 
 const generator = rough.generator()
 const drawLine = (x1, y1, x2, y2) => {
@@ -51,14 +53,20 @@ const Canvas = () => {
   }
 
   return (
-    <canvas id="canvas"
-      width={window.innerWidth} 
-      height={window.innerHeight}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}        onMouseUp={handleMouseUp}
-    >
-      Paint
-    </canvas>
+    <Layout>
+      {/* <Line /> */}
+      {/* <Rectangle /> */}
+      {/* <Circle /> */}
+      <ToolSwitcher />
+      <canvas id="canvas"
+        width={window.innerWidth} 
+        height={window.innerHeight}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}        onMouseUp={handleMouseUp}
+      >
+        Paint
+      </canvas>
+    </Layout>
   )
 }
 
