@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Canvas from '../Canvas/Canvas'
 
 
 class ToolSwitcher extends Component {
@@ -17,12 +18,13 @@ class ToolSwitcher extends Component {
 
     render() {
         return (
-        <div>
+        <>
         <input type="radio" value="Pen" name="tool" onChange={this.onChangeValue}/> Pen
-        <input type="radio" value="Circle" name="tool" onChange={this.onChangeValue}/> Circle
         <input type="radio" value="Rectangle" name="tool" onChange={this.onChangeValue}/> Rectangle
-    
-        </div>
+        <input type="radio" value="Circle" name="tool" onChange={this.onChangeValue}/> Circle
+        <Canvas toolSelected={this.state.toolSelected}/>
+        </>
+       
         )
     }
 }

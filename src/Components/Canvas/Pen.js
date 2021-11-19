@@ -1,12 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react'
 
 
-const Line = () => {
+const Pen = (props) => {
+    const isSelected = props.isSelected
+    
+     
+    
     const [drawing, setDrawing] = useState(false)
-
     const canvasRef = useRef(null)
     const ctxRef = useRef(null)
-
+  
     useEffect(() => {
         const canvas = canvasRef.current
         canvas.width = window.innerWidth * 2
@@ -52,8 +55,8 @@ const Line = () => {
         ctxRef.current.closePath()
         setDrawing(false)
     }
-
     return (
+   
             <canvas id="canvas"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -62,9 +65,10 @@ const Line = () => {
             
             >
             Paint
+            
         </canvas>
 
-)
+    )
 }
 
-export default Line
+export default Pen
