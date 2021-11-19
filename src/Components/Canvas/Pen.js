@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 
 
 const Pen = (props) => {
+    const isSelected = props.isSelected
     
      
     
