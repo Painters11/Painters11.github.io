@@ -19,7 +19,7 @@ function Home(props) {
         <Button
           variant="primary"
         >
-          <Nav.Link href="/canvas">
+          <Nav.Link href="/ToolSwitcher">
             Draw
           </Nav.Link>
         </Button>

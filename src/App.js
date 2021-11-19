@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Components/page/Home'
-import Canvas from './Components/page/sketch/Canvas'
+import ToolSwitcher from './Components/page/sketch/Tools/ToolSwitcher.jsx'
 import './App.css'
 
 function App(props) {
@@ -9,7 +9,7 @@ function App(props) {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/canvas' element={<Canvas />} />
+        <Route path='/ToolSwitcher' element={<ToolSwitcher />} />
       </Routes>
     </Router>
     )

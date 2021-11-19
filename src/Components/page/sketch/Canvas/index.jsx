@@ -1,25 +1,19 @@
 import React, { Component } from 'react'
-import Layout from '../../../shared/Layout'
-import ToolSwitcher from '../Tools/ToolSwitcher.js'
 import Pen from '../Pen.js'
 import Rectangle from '../Rectangle.js'
 import Circle from '../Circle.js'
 
-
 class Canvas extends Component {
-    constructor (props) {
-        super(props)
+  constructor (props) {
+    super(props)
 
-        this.state = {
-            penSelected: false,
-            rectangleSelected: false,
-            circleSelected: false
-            
-        }
+    this.state = {
+      penSelected: false,
+      rectangleSelected: false,
+      circleSelected: false
+      
     }
-
-
-   
+  }
     componentDidUpdate(prevProps) {
         const { toolSelected } = this.props
         if(toolSelected !== prevProps.toolSelected) {
@@ -49,17 +43,15 @@ class Canvas extends Component {
 
    
 
-    render() {
-        
-        return (
-            <Layout>
-              <ToolSwitcher />
-                <Pen isSelected={this.state.penSelected}/>
-                <Rectangle isSelected={this.state.rectangleSelected}/>
-                <Circle isSelected={this.state.circleSelected}/>
-            </Layout>
-        )
-    }
+  render() {  
+    return (
+      <>
+        {this.state.penSelected ? <Pen isSelected={this.state.penSelected}/> : ''}
+        {this.state.rectangleSelected ? <Rectangle isSelected={this.state.rectangleSelected}/> : ''}
+        {this.state.circleSelected ? <Circle isSelected={this.state.circleSelected}/> : ''}
+      </>
+    )
+  }
 
 }
 

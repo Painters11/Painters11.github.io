@@ -3,9 +3,6 @@ import React, { useRef, useEffect, useState } from 'react'
 
 const Pen = (props) => {
     const isSelected = props.isSelected
-    
-     
-    
     const [drawing, setDrawing] = useState(false)
     const canvasRef = useRef(null)
     const ctxRef = useRef(null)
@@ -37,7 +34,6 @@ const Pen = (props) => {
         ctxRef.current.beginPath()
         ctxRef.current.moveTo(pos.x, pos.y)
         setDrawing(true)
-
     }
 
     const handleMouseMove = (event) => {
