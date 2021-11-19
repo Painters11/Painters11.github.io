@@ -64,7 +64,6 @@ const Canvas = () => {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}        onMouseUp={handleMouseUp}
       >
-        Paint
       </canvas>
     </Layout>
   )
