@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react'
-import Layout from './Components/Layout/layout.js'
+import { useRoutes } from 'hookrouter'
+import routes from './router'
+import Layout from './components/Layout/layout.js'
 
-
-const App = props => (
-  <Fragment>
-    <Layout />
-
-  </Fragment>
-)
+function App() {
+  const routeResult = useRoutes(routes)
+  return (
+    <Fragment>
+      <Layout />
+    </Fragment>,
+    routeResult
+  )
+}
 
 export default App
