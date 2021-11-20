@@ -3,14 +3,11 @@ import Draw from './Draw'
 
 const Canvas = (props) => {
   const [tool, setTool] = useState('')
-  // const [isCircle, setIsCircle] = useState(false)
 
   const handleClick = (event) => {
     setTool(event.target.name)
   }
-  // const handleCircleClick = (event) => {
-  //   !isCircle ? setIsCircle(true) : setIsCircle(false)
-  // }
+
 
   return (
     <>
@@ -18,8 +15,6 @@ const Canvas = (props) => {
     <button onClick={handleClick} name="rectangle" type="radio">Rectangle</button>
     <button onClick={handleClick} name="circle" type="radio">Circle</button>
     <Draw toolSelected={tool}/>
-    
-    
     </>
 
   
