@@ -62,10 +62,7 @@ const Circle = () => {
         const endY = pos.y
         endXRef.current = endX
         endYRef.current = endY
-        // const xCoord = endXRef.current - startXRef.current
-        // const yCoord = endYRef.current - startYRef.current
         const radius = Math.sqrt(Math.pow((startXRef.current - endXRef.current), 2) + Math.pow((startYRef.current - endYRef.current), 2))
-        // console.log(radius)
         ctxRef.current.arc(startXRef.current, startYRef.current, radius, 0, 2 * Math.PI)
         ctxRef.current.stroke()
         ctxRef.current.fill()
