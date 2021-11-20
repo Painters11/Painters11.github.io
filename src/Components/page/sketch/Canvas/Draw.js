@@ -90,7 +90,6 @@ const Draw = (props) => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             ref={canvasRef}
-            
             >
             Paint
             
