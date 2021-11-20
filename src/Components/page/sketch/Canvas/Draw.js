@@ -34,29 +34,20 @@ const Draw = (props) => {
     }
     const handleMouseDown = (event) => {
         console.log(toolSelected)
+        const pos = getMousePos(canvasRef.current, event)
+        const startX = pos.x
+        const startY = pos.y
+        startXRef.current = startX
+        startYRef.current = startY
+        
         if(toolSelected === 'pen') {
-            const pos = getMousePos(canvasRef.current, event)
             ctxRef.current.beginPath()
             ctxRef.current.moveTo(pos.x, pos.y)
             setDrawing(true)
-        } else if (toolSelected === 'circle') {
-            const pos = getMousePos(canvasRef.current, event)
+        } else if (toolSelected === 'circle' || toolSelected === 'rectangle') {
             ctxRef.current.beginPath()
-            const startX = pos.x
-            const startY = pos.y
-            startXRef.current = startX
-            startYRef.current = startY
             setDrawing(true)
-        } else if (toolSelected === 'rectangle') {
-            const pos = getMousePos(canvasRef.current, event)
-            ctxRef.current.beginPath()
-            // ctxRef.current.moveTo(pos.x, pos.y)
-            const startX = pos.x
-            const startY = pos.y
-            startXRef.current = startX
-            startYRef.current = startY
-            setDrawing(true)
-        }
+        } 
     }
 
     const handleMouseMove = (event) => {
@@ -65,37 +56,27 @@ const Draw = (props) => {
         }
         const pos = getMousePos(canvasRef.current, event)
         if(toolSelected === 'pen') {
-                 
             ctxRef.current.lineTo(pos.x, pos.y)
             ctxRef.current.stroke()
         } 
     }
 
     const handleMouseUp = (event) => {
+        const pos = getMousePos(canvasRef.current, event)
+        endXRef.current = pos.x
+        endYRef.current = pos.y
         if(toolSelected === 'pen') {
             ctxRef.current.closePath()
             setDrawing(false)
         } else if(toolSelected === 'circle') {
-            const pos = getMousePos(canvasRef.current, event)
-            const endX = pos.x
-            const endY = pos.y
-            endXRef.current = endX
-            endYRef.current = endY
             const radius = Math.sqrt(Math.pow((startXRef.current - endXRef.current), 2) + Math.pow((startYRef.current - endYRef.current), 2))
             ctxRef.current.arc(startXRef.current, startYRef.current, radius, 0, 2 * Math.PI)
             ctxRef.current.stroke()
-
             ctxRef.current.closePath()
             setDrawing(false)
         } else if (toolSelected === 'rectangle') {
-            const pos = getMousePos(canvasRef.current, event)
-            const endX = pos.x
-            const endY = pos.y
-            endXRef.current = endX
-            endYRef.current = endY
             const width = endXRef.current - startXRef.current
             const height = endYRef.current - startYRef.current
-          
             ctxRef.current.strokeRect(startXRef.current, startYRef.current, width, height)
             ctxRef.current.closePath()
             setDrawing(false)
