@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container'
 
 const Header = () => (
 <>
-  <Navbar bg="primary" variant="dark">
+  <Navbar bg="primary" variant="dark" sticky='top'>
     <Container>
       <Nav className="me-auto justify-content-center">
         <Nav.Link href="/">Home</Nav.Link>
