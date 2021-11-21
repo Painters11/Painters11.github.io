@@ -17,9 +17,7 @@ const Canvas = (props) => {
           <button onClick={handleClick} name="rectangle" type="radio">Rectangle</button>
           <button onClick={handleClick} name="circle" type="radio">Circle</button>
         </div>  
-        <div id='canvas'>
           <Draw toolSelected={tool} />
-        </div>
       </div>
     </>
   )

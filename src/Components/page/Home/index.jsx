@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from '../../shared/Layout'
 import { Nav, Button } from 'react-bootstrap'
+import './home.scss'
 
 function Home(props) {
   return (
-    <>
+    <div className='home'>
       <div className='appbox'>
         <div className='title'>
           <h2>Mint Painters</h2>
@@ -24,7 +24,7 @@ function Home(props) {
           </Nav.Link>
         </Button>
       </div>
-    </>
+    </div>
   )
 }
 
