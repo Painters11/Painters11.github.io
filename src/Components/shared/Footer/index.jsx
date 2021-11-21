@@ -4,16 +4,32 @@ import './footer.scss'
 function Footer() {
   
   return (
-    <div>
+    <div id='footer'>
       <h4>Say Hello to the team!</h4>
       <div className='team'>
-        <ul>
-          <li className='dev'>
-            <h4></h4>
+        <ul className='dev'>
+          <li className='member'>
+            <h4>Ilia de Leon</h4>
             <ul>
-              <li><i className='bi bi-linkedin' /></li>
-              <li></li>
-              <li></li>
+              <li>twitter</li>
+              <li>github</li>
+              <li>linkedin</li>
+            </ul>
+          </li>
+          <li className='member'>
+            <h4>Gregg Goldman</h4>
+            <ul>
+              <li>twitter</li>
+              <li>github</li>
+              <li>linkedin</li>
+            </ul>
+          </li>
+          <li className='member'>
+            <h4>Matt Moore</h4>
+            <ul>
+              <li>twitter</li>
+              <li>github</li>
+              <li>linkedin</li>
             </ul>
           </li>
         </ul>
