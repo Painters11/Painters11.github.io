@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Draw from './Draw'
+import Draw from '../Draw'
+import './canvas.scss'
 
 const Canvas = (props) => {
   const [tool, setTool] = useState('')
@@ -8,17 +9,19 @@ const Canvas = (props) => {
     setTool(event.target.name)
   }
 
-
   return (
     <>
-    <button onClick={handleClick} name="pen" type="radio">Pen</button>
-    <button onClick={handleClick} name="rectangle" type="radio">Rectangle</button>
-    <button onClick={handleClick} name="circle" type="radio">Circle</button>
-    <Draw toolSelected={tool}/>
+      <div className='drawBox'>
+        <div className="toolBelt">
+          <button onClick={handleClick} name="pen" type="radio">Pen</button>
+          <button onClick={handleClick} name="rectangle" type="radio">Rectangle</button>
+          <button onClick={handleClick} name="circle" type="radio">Circle</button>
+        </div>  
+        <div id='canvas'>
+          <Draw toolSelected={tool} />
+        </div>
+      </div>
     </>
-
-  
-
   )
 }
 

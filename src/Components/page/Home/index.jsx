@@ -4,7 +4,7 @@ import { Nav, Button } from 'react-bootstrap'
 
 function Home(props) {
   return (
-    <Layout>
+    <>
       <div className='appbox'>
         <div className='title'>
           <h2>Mint Painters</h2>
@@ -24,7 +24,7 @@ function Home(props) {
           </Nav.Link>
         </Button>
       </div>
-    </Layout>
+    </>
   )
 }
 

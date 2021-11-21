@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import './draw.scss'
 
 const Draw = (props) => {
     const [drawing, setDrawing] = useState(false)
