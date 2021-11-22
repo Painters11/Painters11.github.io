@@ -3,6 +3,7 @@ import './draw.scss'
 
 const Draw = (props) => {
     const [drawing, setDrawing] = useState(false)
+
     const toolSelected = props.toolSelected
     const colorSelected = props.colorSelected
     const brushSize = props.brushSizeSelected
@@ -13,6 +14,7 @@ const Draw = (props) => {
     const endXRef = useRef(null)
     const endYRef = useRef(null)
     const backgroundRef = useRef(null)
+    const circleRef = useRef(null)
   
     useEffect(() => {
         const canvas = canvasRef.current
@@ -39,7 +41,6 @@ const Draw = (props) => {
         }
     }
     const handleMouseDown = (event) => {
-        console.log(window.getComputedStyle(document.body)["backgroundColor"])
         const pos = getMousePos(canvasRef.current, event)
         const startX = pos.x
         const startY = pos.y
@@ -83,9 +84,10 @@ const Draw = (props) => {
             setDrawing(false)
         } else if(toolSelected === 'circle') {
             const radius = Math.sqrt(Math.pow((startXRef.current - endXRef.current), 2) + Math.pow((startYRef.current - endYRef.current), 2))
-            ctxRef.current.arc(startXRef.current, startYRef.current, radius, 0, 2 * Math.PI)
-            ctxRef.current.stroke()
+            circleRef.current = ctxRef.current.arc(startXRef.current, startYRef.current, radius, 0, 2 * Math.PI)
+            ctxRef.current.stroke()   
             ctxRef.current.closePath()
+            
             setDrawing(false)
         } else if (toolSelected === 'rectangle') {
             const width = endXRef.current - startXRef.current
