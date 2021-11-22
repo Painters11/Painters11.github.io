@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { HexColorPicker } from 'react-colorful'
+import { HexColorPicker } from 'react-colorful'
 import Draw from './Draw'
 
 const Canvas = (props) => {
