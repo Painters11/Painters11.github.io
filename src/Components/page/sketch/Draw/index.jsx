@@ -13,7 +13,6 @@ const Draw = (props) => {
     const endXRef = useRef(null)
     const endYRef = useRef(null)
     const backgroundRef = useRef(null)
-    window.document.body.style.background = "white"
   
     useEffect(() => {
         const canvas = canvasRef.current
@@ -29,7 +28,8 @@ const Draw = (props) => {
         ctx.lineWidth = 5
         ctxRef.current = ctx
         
-        backgroundRef.current = window.document.body.style.background
+        backgroundRef.current = window.getComputedStyle(document.body)["backgroundColor"]
+  
     }, [])
     const getMousePos = (canvas, e) => {
         const rect = canvasRef.current.getBoundingClientRect();
@@ -39,7 +39,7 @@ const Draw = (props) => {
         }
     }
     const handleMouseDown = (event) => {
-        console.log(backgroundRef.current)
+        console.log(window.getComputedStyle(document.body)["backgroundColor"])
         const pos = getMousePos(canvasRef.current, event)
         const startX = pos.x
         const startY = pos.y
