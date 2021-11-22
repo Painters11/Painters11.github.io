@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDBBtn } from 'mdb-react-ui-kit'
+import Image from 'react-bootstrap/Image'
 import './logo.scss'
 import logo from '../../../imgs/Logo.png'
 
@@ -9,7 +10,7 @@ function Logo() {
       <div className='appbox'>
         <div className='title'>
           <h2>
-            <img src={logo} alt='Mint Painters, Encourage Your Young Artist' id='logo' />
+            <Image src={logo} alt='Mint Painters, Encourage Your Young Artist' id='logo' />
           </h2>
         </div>
         <div className='buttonbox'>
