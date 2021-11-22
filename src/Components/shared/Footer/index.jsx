@@ -58,7 +58,7 @@ function Footer() {
             </ul>
           </li>
           <li className='member'>
-            <h4>Gregg Goldman</h4>
+            <h4>Greg Goldman</h4>
             <ul>
               <li>
                 <SocialMediaIconsReact 
