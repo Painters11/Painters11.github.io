@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+<<<<<<< HEAD
 import { HexColorPicker } from 'react-colorful'
 import Draw from './Draw'
+=======
+import Draw from '../Draw'
+import './canvas.scss'
+>>>>>>> dev
 
 const Canvas = (props) => {
   const [tool, setTool] = useState('')
@@ -11,6 +16,7 @@ const Canvas = (props) => {
     setTool(event.target.name)
   }
 
+<<<<<<< HEAD
   const updateSlider = (event) => {
     setBrushSize(event.target.value)
   }
@@ -26,10 +32,19 @@ const Canvas = (props) => {
     <HexColorPicker color={color} onChange={setColor} />
     <Draw toolSelected={tool} colorSelected={color} brushSizeSelected={brushSize}/>
     
+=======
+  return (
+    <>
+      <div className='drawBox'>
+        <div className="toolBelt">
+          <button onClick={handleClick} name="pen" type="radio">Pen</button>
+          <button onClick={handleClick} name="rectangle" type="radio">Rectangle</button>
+          <button onClick={handleClick} name="circle" type="radio">Circle</button>
+        </div>  
+          <Draw toolSelected={tool} />
+      </div>
+>>>>>>> dev
     </>
-
-  
-
   )
 }
 

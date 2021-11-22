@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-
+import './line.scss'
 
 const Pen = (props) => {
     const isSelected = props.isSelected

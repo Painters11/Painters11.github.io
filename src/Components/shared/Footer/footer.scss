@@ -1,0 +1,21 @@
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.team {
+  display: flex;
+
+  flex-grow: 3;
+  justify-content: space-evenly;
+
+}
+.dev {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60vw;
+}
+.member {
+  display: flex;
+  justify-content: space-evenly;
+}
