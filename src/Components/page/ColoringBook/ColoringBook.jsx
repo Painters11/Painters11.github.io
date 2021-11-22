@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
-import Rect from './Rect'
+import Rect from './Llama'
 
 
 const ColoringBook = (props) => {
