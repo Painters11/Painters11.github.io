@@ -12,6 +12,8 @@ const Draw = (props) => {
     const startYRef = useRef(null)
     const endXRef = useRef(null)
     const endYRef = useRef(null)
+    const backgroundRef = useRef(null)
+    window.document.body.style.background = "white"
   
     useEffect(() => {
         const canvas = canvasRef.current
@@ -27,6 +29,7 @@ const Draw = (props) => {
         ctx.lineWidth = 5
         ctxRef.current = ctx
         
+        backgroundRef.current = window.document.body.style.background
     }, [])
     const getMousePos = (canvas, e) => {
         const rect = canvasRef.current.getBoundingClientRect();
@@ -36,7 +39,7 @@ const Draw = (props) => {
         }
     }
     const handleMouseDown = (event) => {
-        console.log(toolSelected)
+        console.log(backgroundRef.current)
         const pos = getMousePos(canvasRef.current, event)
         const startX = pos.x
         const startY = pos.y
@@ -52,7 +55,12 @@ const Draw = (props) => {
         } else if (toolSelected === 'circle' || toolSelected === 'rectangle') {
             ctxRef.current.beginPath()
             setDrawing(true)
-        } 
+        } else if(toolSelected === 'eraser') {
+            ctxRef.current.beginPath()
+            ctxRef.current.strokeStyle = backgroundRef.current
+            ctxRef.current.moveTo(pos.x, pos.y)
+            setDrawing(true)
+        }
     }
 
     const handleMouseMove = (event) => {
@@ -60,7 +68,7 @@ const Draw = (props) => {
             return
         }
         const pos = getMousePos(canvasRef.current, event)
-        if(toolSelected === 'pen') {
+        if(toolSelected === 'pen' || toolSelected === 'eraser') {
             ctxRef.current.lineTo(pos.x, pos.y)
             ctxRef.current.stroke()
         } 
@@ -70,7 +78,7 @@ const Draw = (props) => {
         const pos = getMousePos(canvasRef.current, event)
         endXRef.current = pos.x
         endYRef.current = pos.y
-        if(toolSelected === 'pen') {
+        if(toolSelected === 'pen' || toolSelected === 'eraser') {
             ctxRef.current.closePath()
             setDrawing(false)
         } else if(toolSelected === 'circle') {
