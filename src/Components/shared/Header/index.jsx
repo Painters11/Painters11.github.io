@@ -13,6 +13,7 @@ function Header() {
             <Nav.Link href="/">Home</Nav.Link>
             <NavLink to="/about" className='nav-link'>About</NavLink>
             <Nav.Link href="/canvas">Draw</Nav.Link>
+            <Nav.Link href="/coloringbook">Coloring Book</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

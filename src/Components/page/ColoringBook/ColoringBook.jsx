@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
-import Rect from './Llama'
+import Llama from './Llama'
 
 
 const ColoringBook = (props) => {
@@ -11,7 +11,7 @@ const ColoringBook = (props) => {
   return (
     <>
     <HexColorPicker color={color} onChange={setColor} />
-    <Rect color={color}></Rect>
+    <Llama color={color}></Llama>
     </>
   )
 }
