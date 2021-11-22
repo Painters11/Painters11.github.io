@@ -1,6 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { HexColorPicker } from 'react-colorful'
-
 
 const Draw = (props) => {
     const [drawing, setDrawing] = useState(false)
