@@ -4,6 +4,8 @@ import './draw.scss'
 const Draw = (props) => {
     const [drawing, setDrawing] = useState(false)
     const toolSelected = props.toolSelected
+    const colorSelected = props.colorSelected
+    const brushSize = props.brushSizeSelected
     const canvasRef = useRef(null)
     const ctxRef = useRef(null)
     const startXRef = useRef(null)
@@ -40,6 +42,8 @@ const Draw = (props) => {
         const startY = pos.y
         startXRef.current = startX
         startYRef.current = startY
+        ctxRef.current.strokeStyle = colorSelected
+        ctxRef.current.lineWidth = brushSize
         
         if(toolSelected === 'pen') {
             ctxRef.current.beginPath()
