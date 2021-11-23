@@ -7,14 +7,13 @@ import Container from 'react-bootstrap/Container'
 function Header() {
   return (
     <>
-      <Navbar bg="light" expand='lg' className='fixed-top'>
+      <Navbar bg="light" expand='lg'>
         <Container fluid>
           <Nav className="me-auto">
             <NavLink to="/" className='nav-link'>Home</NavLink>
             <NavLink to="/about" className='nav-link'>About</NavLink>
             <Nav.Link href="/canvas">Draw</Nav.Link>
             <Nav.Link href="/coloringbook">Coloring Book</Nav.Link>
-            <NavLink to="/canvas" className='nav-link'>Draw</NavLink>
           </Nav>
         </Container>
       </Navbar>
