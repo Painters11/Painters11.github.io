@@ -1,9 +1,22 @@
-.drawBox {
-  border-style: solid;
-  margin: auto;
-  height: 75vh;
-  width: 98vw;
+.tool {
+  background: #ADCAB9;
+  margin: 2px;
+  border-radius: 20px;
+  width: auto;
 }
-.toolBelt {
-  text-align: center;
+
+.container {
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 0.5fr 2.2fr 0.3fr; 
+  grid-template-rows: 0.1fr 2fr 1.1fr; 
+  gap: 2px 0px; 
+}
+
+.ToolBar { 
+  grid-area: 3 / 1 / 4 / 2; 
+}
+
+.Canvas { 
+  grid-area: 2 / 1 / 3 / 2; 
 }
