@@ -13,7 +13,7 @@ import './footer.scss'
 function Footer() {
   
   return (
-    <MDBFooter className='text-white text-center text-lg-left fixed-bottom' id='footer'>
+    <MDBFooter className='text-white text-center text-lg-left border-bottom' id='footer'>
       <Nav className='text-left p-2'>
         <NavLink to='/team' className='linktext'>
           <Image src={footer} />
