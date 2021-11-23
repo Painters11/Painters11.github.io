@@ -8,7 +8,7 @@ import logo from '../../../imgs/NavbarLogo.png'
 
 function Header() {
   return (
-
+<>
     <div className='nav'>
       <Navbar bg="light" expand='md' id='nav' >
         <Container fluid>
@@ -28,6 +28,7 @@ function Header() {
         </Container>
       </Navbar>
     </div>
+    </>
   )
 }
 
