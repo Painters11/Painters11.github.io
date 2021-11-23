@@ -1,19 +1,22 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './Components/page/Home'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './Components/shared/Layout'
+import Land from './Components/page/Land'
 import Canvas from './Components/page/sketch/Canvas/index.jsx'
+import ColoringBook from './Components/page/ColoringBook/ColoringBook'
+import Team from './Components/page/Team/index.jsx'
 import './App.css'
 
 function App(props) {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/canvas' element={<Canvas />} />
-      </Routes>
-    </Router>
-
-
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Land />} />
+          <Route path='/canvas' element={<Canvas />} />
+          <Route path='/coloringbook' element={<ColoringBook />} />
+          <Route path='/team' element={<Team />} />
+        </Routes>
+      </Layout>
     )
   }
 
