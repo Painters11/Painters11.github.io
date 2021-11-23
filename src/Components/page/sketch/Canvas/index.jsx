@@ -19,6 +19,7 @@ const Canvas = (props) => {
 
   return (
     <>
+
       <button onClick={handleClick} name="pen">Pen</button>
       <button onClick={handleClick} name="rectangle">Rectangle</button>
       <button onClick={handleClick} name="circle">Circle</button>
@@ -27,6 +28,7 @@ const Canvas = (props) => {
       <input type="range" min="1" max="20" defaultValue={brushSize} className="slider" id="stroke" onChange={updateSlider}></input>
       <HexColorPicker color={color} onChange={setColor} />
       <Draw toolSelected={tool} colorSelected={color} brushSizeSelected={brushSize}/>
+
     </>
   )
 }
