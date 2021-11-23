@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/painters11/static/css/main.95feeffd.chunk.css",
+    "main.js": "/painters11/static/js/main.1cbdef02.chunk.js",
+    "main.js.map": "/painters11/static/js/main.1cbdef02.chunk.js.map",
+    "runtime-main.js": "/painters11/static/js/runtime-main.00a78304.js",
+    "runtime-main.js.map": "/painters11/static/js/runtime-main.00a78304.js.map",
+    "static/css/2.4c5df654.chunk.css": "/painters11/static/css/2.4c5df654.chunk.css",
+    "static/js/2.8c3d9d9a.chunk.js": "/painters11/static/js/2.8c3d9d9a.chunk.js",
+    "static/js/2.8c3d9d9a.chunk.js.map": "/painters11/static/js/2.8c3d9d9a.chunk.js.map",
+    "index.html": "/painters11/index.html",
+    "static/css/2.4c5df654.chunk.css.map": "/painters11/static/css/2.4c5df654.chunk.css.map",
+    "static/css/main.95feeffd.chunk.css.map": "/painters11/static/css/main.95feeffd.chunk.css.map",
+    "static/js/2.8c3d9d9a.chunk.js.LICENSE.txt": "/painters11/static/js/2.8c3d9d9a.chunk.js.LICENSE.txt",
+    "static/media/DrawingPad3.1b0663b1.png": "/painters11/static/media/DrawingPad3.1b0663b1.png",
+    "static/media/DrawingPad4.a9535b7c.png": "/painters11/static/media/DrawingPad4.a9535b7c.png",
+    "static/media/DrawingPad5.e2a27696.png": "/painters11/static/media/DrawingPad5.e2a27696.png",
+    "static/media/Ilia.8e9348da.png": "/painters11/static/media/Ilia.8e9348da.png",
+    "static/media/Logo.de07f662.png": "/painters11/static/media/Logo.de07f662.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00a78304.js",
+    "static/css/2.4c5df654.chunk.css",
+    "static/js/2.8c3d9d9a.chunk.js",
+    "static/css/main.95feeffd.chunk.css",
+    "static/js/main.1cbdef02.chunk.js"
+  ]
+}
