@@ -19,14 +19,16 @@ const Canvas = (props) => {
 
   return (
     <>
-    <button onClick={handleClick} name="pen" type="radio">Pen</button>
-    <button onClick={handleClick} name="rectangle" type="radio">Rectangle</button>
-    <button onClick={handleClick} name="circle" type="radio">Circle</button>
-    <button onClick={handleClick} name="eraser">Eraser</button>
-    <label htmlFor="stroke">Brush Size (0 to 20)</label>
-    <input type="range" min="1" max="20" defaultValue={brushSize} className="slider" id="stroke" onChange={updateSlider}></input>
-    <HexColorPicker color={color} onChange={setColor} />
-    <Draw toolSelected={tool} colorSelected={color} brushSizeSelected={brushSize}/>
+
+      <button onClick={handleClick} name="pen">Pen</button>
+      <button onClick={handleClick} name="rectangle">Rectangle</button>
+      <button onClick={handleClick} name="circle">Circle</button>
+      <button onClick={handleClick} name="eraser">Eraser</button>
+      <label htmlFor="stroke">Brush Size (0 to 10)</label>
+      <input type="range" min="1" max="20" defaultValue={brushSize} className="slider" id="stroke" onChange={updateSlider}></input>
+      <HexColorPicker color={color} onChange={setColor} />
+      <Draw toolSelected={tool} colorSelected={color} brushSizeSelected={brushSize}/>
+
     </>
   )
 }

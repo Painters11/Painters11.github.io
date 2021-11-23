@@ -8,8 +8,9 @@ import logo from '../../../imgs/NavbarLogo.png'
 
 function Header() {
   return (
+
     <div className='nav'>
-      <Navbar bg="light" expand='md' className='fixed-top' id='nav' >
+      <Navbar bg="light" expand='md' id='nav' >
         <Container fluid>
           <Navbar.Brand>
             <NavLink to="/" className='nav-link'>
@@ -21,6 +22,7 @@ function Header() {
             <Nav className="me-auto">
               <NavLink to="/team" className='nav-link'>Team</NavLink>
               <NavLink to="/canvas" className='nav-link'>Draw</NavLink>
+              <Nav.Link href="/coloringbook">Coloring Book</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
