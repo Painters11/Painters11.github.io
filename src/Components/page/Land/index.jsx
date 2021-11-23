@@ -6,7 +6,9 @@ import './land.scss'
 function Land(props) {
   return (
     <div className='land'>
-      <Logo />
+      <div className='logo'>
+        <Logo />
+      </div>
       <div className='about'>
         <About />
       </div>

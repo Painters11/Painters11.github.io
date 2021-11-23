@@ -4,12 +4,16 @@ import Card from 'react-bootstrap/Card'
 import LinkedIn from '../../misc/sm-icons/LinkedIn'
 import Github from '../../misc/sm-icons/Github'
 import Twitter from '../../misc/sm-icons/Twitter'
+import ilia from './Ilia.png'
 
-function Team() {
+const ilia1 = {ilia}
+
+function Team(ilia1,) {
+  {}
   const members = [
     {
       id: 1,
-      image:'',
+      image: '',
       firstName: 'Ilia',
       lastName: 'de Leon',
       role: 'UX Designer',
@@ -42,26 +46,28 @@ function Team() {
     },
   ]
   return (
-    <CardGroup id='cardpage'>
-      {members.map((member) => (
-      <Card item key={member.id}>
-        <Card.Img variant="top" src={member.image} />
-        <Card.Body>
-          <Card.Title>
-            {member.firstName} {member.lastName}
-          </Card.Title>
-          <Card.Text>
-            {member.role}
-          </Card.Text>
-          <Card.Footer>
-            <Twitter href={member.twitter} />
-            <Github href={member.github} />
-            <LinkedIn href={member.linkedIn} />
-          </Card.Footer>
-        </Card.Body>
-      </Card>
-    ))}
-    </CardGroup>
+    <div id='cardpage'>
+      <CardGroup>
+        {members.map((member) => (
+        <Card item key={member.id}>
+          <Card.Img variant="top" src={member.image} />
+          <Card.Body>
+            <Card.Title>
+              {member.firstName} {member.lastName}
+            </Card.Title>
+            <Card.Text>
+              {member.role}
+            </Card.Text>
+            <Card.Footer>
+              <Twitter href={member.twitter} />
+              <Github href={member.github} />
+              <LinkedIn href={member.linkedIn} />
+            </Card.Footer>
+          </Card.Body>
+        </Card>
+      ))}
+      </CardGroup>
+    </div>
   )
 }
 
