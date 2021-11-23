@@ -1,7 +1,9 @@
 import React from 'react'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Card from 'react-bootstrap/Card'
-import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import LinkedIn from '../../misc/sm-icons/LinkedIn'
+import Github from '../../misc/sm-icons/Github'
+import Twitter from '../../misc/sm-icons/Twitter'
 
 function Team() {
   const members = [
@@ -40,7 +42,7 @@ function Team() {
     },
   ]
   return (
-    <CardGroup>
+    <CardGroup id='cardpage'>
       {members.map((member) => (
       <Card item key={member.id}>
         <Card.Img variant="top" src={member.image} />
@@ -52,23 +54,9 @@ function Team() {
             {member.role}
           </Card.Text>
           <Card.Footer>
-            <ul>
-              <li>
-                <MDBBtn className='m-1' style={{ backgroundColor: '#55acee' }} href={member.twitter}>
-                  <MDBIcon fab icon='twitter' />
-                </MDBBtn>
-              </li>
-              <li>
-                <MDBBtn className='m-1' style={{ backgroundColor: '#333333' }} href={member.github}>
-                  <MDBIcon fab icon='github' />
-                </MDBBtn>
-              </li>
-              <li>
-                <MDBBtn className='m-1' style={{ backgroundColor: '#0082ca' }} href={member.linkedIn}>
-                  <MDBIcon fab icon='linkedin-in' />
-                </MDBBtn>
-              </li>
-            </ul>
+            <Twitter href={member.twitter} />
+            <Github href={member.github} />
+            <LinkedIn href={member.linkedIn} />
           </Card.Footer>
         </Card.Body>
       </Card>
