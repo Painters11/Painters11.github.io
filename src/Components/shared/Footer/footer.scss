@@ -1,21 +1,14 @@
 #footer {
   display: flex;
+  justify-content: space-evenly;
+  background-color: #00695C;
+  max-height: 10%;
+}
+.pic {
+  max-width: 25%;
+  max-height: 25%;
+}
+.linktext {
+  display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-}
-.team {
-  display: flex;
-
-  flex-grow: 3;
-  justify-content: space-evenly;
-
-}
-.dev {
-  display: flex;
-  justify-content: space-evenly;
-  width: 60vw;
-}
-.member {
-  display: flex;
-  justify-content: space-evenly;
 }
