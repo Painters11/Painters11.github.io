@@ -7,7 +7,9 @@ function Land(props) {
   return (
     <div className='land'>
       <Logo />
-      <About />
+      <div className='about'>
+        <About />
+      </div>
     </div>
   )
 }
