@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './Components/shared/Layout'
 import Land from './Components/page/Land'
 import Canvas from './Components/page/sketch/Canvas/index.jsx'
-import Team from './Components/shared/Team'
+import Team from './Components/page/Team/index.jsx'
 import './App.css'
 
 function App(props) {
