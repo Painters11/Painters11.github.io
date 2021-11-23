@@ -9,7 +9,6 @@ import logo from '../../../imgs/NavbarLogo.png'
 function Header() {
   return (
 <>
-    <div className='nav'>
       <Navbar bg="light" expand='md' id='nav' >
         <Container fluid>
           <Navbar.Brand>
@@ -19,7 +18,7 @@ function Header() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="ml-auto">
               <NavLink to="/team" className='nav-link'>Team</NavLink>
               <NavLink to="/canvas" className='nav-link'>Draw</NavLink>
               <Nav.Link href="/coloringbook">Coloring Book</Nav.Link>
@@ -27,7 +26,6 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
     </>
   )
 }
