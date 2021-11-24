@@ -1,8 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardImage, MDBCardBody } from 'mdb-react-ui-kit'
-import draw1 from '../../../imgs/DrawingPad3.png'
-import draw2 from '../../../imgs/DrawingPad4.png'
 import draw3 from '../../../imgs/DrawingPad5.png'
 import draw4 from '../../../imgs/DrawingPad6.png'
 

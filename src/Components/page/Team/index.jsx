@@ -4,12 +4,9 @@ import Card from 'react-bootstrap/Card'
 import LinkedIn from '../../misc/sm-icons/LinkedIn'
 import Github from '../../misc/sm-icons/Github'
 import Twitter from '../../misc/sm-icons/Twitter'
-import ilia from './Ilia.png'
 
-const ilia1 = {ilia}
 
-function Team(ilia1,) {
-  {}
+function Team() {
   const members = [
     {
       id: 1,

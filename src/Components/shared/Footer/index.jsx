@@ -1,10 +1,8 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
 import { NavLink } from 'react-router-dom'
-import { MDBFooter, MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { MDBFooter } from 'mdb-react-ui-kit';
 import Image from 'react-bootstrap/Image'
-import Github from '../../misc/sm-icons/Github'
 import footer from '../../../imgs/FooterLogo.png'
 import repo from '../../../imgs/VisitRepo.png'
 import cw from '../../../imgs/CLW.png'
