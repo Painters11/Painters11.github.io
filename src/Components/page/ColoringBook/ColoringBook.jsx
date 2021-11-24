@@ -4,6 +4,7 @@ import Heart from './Heart'
 import Pumpkin from './Pumpkin'
 import Dog from './Dog'
 import IceCream from './IceCream'
+import Moon from './Moon'
 
 
 const ColoringBook = (props) => {
@@ -22,6 +23,7 @@ const ColoringBook = (props) => {
       <option value="heart">Heart</option>
       <option value="pumpkin">Pumpkin</option>
       <option value="dog">Dog</option>
+      <option value="moon">Moon</option>
       <option value="icecream">Ice Cream</option>
     </select>
     <HexColorPicker color={color} onChange={setColor} />
@@ -30,6 +32,7 @@ const ColoringBook = (props) => {
     {drawing === 'pumpkin' ? <Pumpkin color={color}></Pumpkin> : ''}
     {drawing === 'dog' ? <Dog color={color}></Dog> : ''}
     {drawing === 'icecream' ? <IceCream color={color}></IceCream> : ''}
+    {drawing === 'moon' ? <Moon color={color}></Moon> : ''}
     </>
   )
 }
