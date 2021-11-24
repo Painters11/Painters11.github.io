@@ -2,7 +2,7 @@
   "name": "paint",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://painters11-3fiwuu97p-painters11.vercel.app/",
+  "homepage": "https://painters11.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
