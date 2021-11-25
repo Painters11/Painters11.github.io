@@ -1,33 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
+import { MDBNavbar, MDBContainer, MDBIcon, MDBNavbarNav, MDBNavbarItem, MDBNavbarToggler, MDBCollapse, MDBNavbarBrand } from 'mdb-react-ui-kit'
 import Image from 'react-bootstrap/Image'
 import logo from '../../../imgs/NavbarLogo.png'
 
 function Header() {
+  const [showNavRight, setShowNavRight] = useState(false)
+  
+  const heads = [
+    {
+      id: 1,
+      text: 'Team',
+      url: '/team'
+    },
+    {
+      id: 2,
+      text: 'Draw',
+      url: '/canvas'
+    },
+    {
+      id: 3,
+      text: 'Coloring Book',
+      url: '/coloringbook'
+    }
+  ]
+  
   return (
-
-    <div className='nav'>
-      <Navbar bg="light" expand='md' id='nav' >
-        <Container fluid>
-          <Navbar.Brand>
-            <NavLink to="/" className='nav-link'>
-              <Image src={logo} />
-            </NavLink>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <NavLink to="/team" className='nav-link'>Team</NavLink>
-              <NavLink to="/canvas" className='nav-link'>Draw</NavLink>
-              <Nav.Link href="/coloringbook">Coloring Book</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+    <MDBNavbar bgColor="light" expand='lg' className='p-1'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand className='p-1'>
+          <NavLink to="/" className='nav-link'>
+            <Image src={logo} />
+          </NavLink>
+        </MDBNavbarBrand>
+        <MDBNavbarToggler
+          type='button'
+          data-target='#navbarRightAlignExample'
+          aria-controls='navbarRightAlignExample'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowNavRight(!showNavRight)}
+          right
+        >
+          <MDBIcon icon='bars' fas className='fixed-right'/>
+        </MDBNavbarToggler>
+        <MDBCollapse navbar show={showNavRight} id='menu'>
+          <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
+            {heads.map((head) => (
+              <MDBNavbarItem item key={head.id}>
+                <NavLink to={head.url} className='nav-link link-dark'>
+                  {head.text}
+                </NavLink>
+              </MDBNavbarItem>
+            ))}
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
   )
 }
 

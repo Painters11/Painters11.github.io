@@ -31,7 +31,7 @@ const Draw = (props) => {
         ctxRef.current = ctx
         
         backgroundRef.current = window.getComputedStyle(document.body)["backgroundColor"]
-  
+       
     }, [])
     const getMousePos = (canvas, e) => {
         const rect = canvasRef.current.getBoundingClientRect();
@@ -99,16 +99,15 @@ const Draw = (props) => {
     }
     return (
         <>
-   
-        <canvas id="canvas"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            ref={canvasRef}
-            >
-            Paint
-            
-        </canvas>
+                <canvas id="canvas"
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    ref={canvasRef}
+                    >
+                    Paint
+                    
+                </canvas>
         </>
 
     )

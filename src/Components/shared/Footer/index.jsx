@@ -1,33 +1,44 @@
 import React from 'react'
-import Nav from 'react-bootstrap/Nav'
-import { NavLink } from 'react-router-dom'
-import { MDBFooter } from 'mdb-react-ui-kit';
-import Image from 'react-bootstrap/Image'
-import footer from '../../../imgs/FooterLogo.png'
-import repo from '../../../imgs/VisitRepo.png'
-import cw from '../../../imgs/CLW.png'
+import { MDBFooter, MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import './footer.scss'
 
 function Footer() {
+  const feet = [
+    {
+      id: 1,
+      text: 'Say Hello to the Team!',
+      url: '/team',
+    },
+    {
+      id: 2,
+      text:'Visit our Repo',
+      url: 'https://github.com/Painters11/painters11',
+    },
+    {
+      id: 3,
+      text: '© 2021: Lunar Wranglers',
+      url: 'https://github.com/Painters11',
+    }
+  ]
   
   return (
-    <MDBFooter className='text-white text-center text-lg-left fixed-bottom' id='footer'>
-      <Nav className='text-left p-2'>
-        <NavLink to='/team' className='linktext'>
-          <Image src={footer} />
-        </NavLink>
-      </Nav>
-      <Nav className='text-center p-3'>
-        <NavLink to='https://github.com/Painters11/Painters11.github.io' className='linktext'>
-          <Image src={repo} />
-        </NavLink>
-      </Nav>
-      <Nav className='text-right p-4'>
-        <NavLink to='https://github.com/Painters11'>
-          <Image src={cw}  />
-        </NavLink>
-      </Nav>
-    </MDBFooter>
+    <>
+      <MDBFooter className='text-white text-center text-lg-left fixed-bottom' id='footer'>
+        <MDBContainer className='p-2'>
+          <MDBRow>
+            {feet.map((foot) => (
+              <MDBCol size='md' item key={foot.id}>
+                <MDBRow>
+                  <a href={foot.url} className='link-light'>        
+                    {foot.text}
+                  </a>
+                </MDBRow>
+              </MDBCol>
+            ))}
+          </MDBRow>
+        </MDBContainer>
+      </MDBFooter>
+    </>
   )
 }
 
