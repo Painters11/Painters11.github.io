@@ -4,6 +4,7 @@ import draw1 from '../../../imgs/DrawingPad3.png'
 import draw2 from '../../../imgs/DrawingPad4.png'
 import draw3 from '../../../imgs/DrawingPad5.png'
 import draw4 from '../../../imgs/DrawingPad6.png'
+import './landcard.scss'
 
 function LandCard(props) {
   const descriptions = [

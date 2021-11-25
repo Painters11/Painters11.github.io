@@ -1,9 +1,3 @@
-.tool {
-  background: #ADCAB9;
-  margin: 2px;
-  border-radius: 20px;
-  width: auto;
-}
 .container {
     position: relative;
     width: auto;
@@ -12,6 +6,7 @@
 
 .toolbar {
   position: absolute;
+  margin-bottom: 80vh;
   width: 100%;
   height: 5%;
   bottom: 1%;
@@ -19,6 +14,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tool {
+  background: #ADCAB9;
+  margin: 2px;
+  border-radius: 20px;
+  width: auto;
 }
 
 .colorContainer {

@@ -6,11 +6,11 @@ function Layout(props) {
   
   return (
     <Fragment>
-      <Header />
-        <div className='render'>
-          {props.children}
-        </div>
-      <Footer />
+      <Header id='heads'/>
+      <div className='render'>
+        {props.children}
+      </div>
+      <Footer className='footer'/>
     </Fragment>
   )
 }

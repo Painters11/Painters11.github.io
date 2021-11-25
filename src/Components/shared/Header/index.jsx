@@ -1,16 +1,34 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
-import { MDBNavbar, MDBContainer, MDBIcon, MDBNavbarNav, MDBNavbarItem, MDBNavbarLink, MDBNavbarToggler, MDBCollapse, MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBNavbarBrand } from 'mdb-react-ui-kit'
+import { MDBNavbar, MDBContainer, MDBIcon, MDBNavbarNav, MDBNavbarItem, MDBNavbarToggler, MDBCollapse, MDBNavbarBrand } from 'mdb-react-ui-kit'
 import Image from 'react-bootstrap/Image'
 import logo from '../../../imgs/NavbarLogo.png'
 
 function Header() {
   const [showNavRight, setShowNavRight] = useState(false)
   
+  const heads = [
+    {
+      id: 1,
+      text: 'Team',
+      url: '/team'
+    },
+    {
+      id: 2,
+      text: 'Draw',
+      url: '/canvas'
+    },
+    {
+      id: 3,
+      text: 'Coloring Book',
+      url: '/coloringbook'
+    }
+  ]
+  
   return (
-    <MDBNavbar bgColor="light" expand='lg' id='nav' >
+    <MDBNavbar bgColor="light" expand='lg' className='p-1'>
       <MDBContainer fluid>
-        <MDBNavbarBrand>
+        <MDBNavbarBrand className='p-1'>
           <NavLink to="/" className='nav-link'>
             <Image src={logo} />
           </NavLink>
@@ -24,19 +42,17 @@ function Header() {
           onClick={() => setShowNavRight(!showNavRight)}
           right
         >
-          <MDBIcon icon='bars' fas />
+          <MDBIcon icon='bars' fas className='fixed-right'/>
         </MDBNavbarToggler>
         <MDBCollapse navbar show={showNavRight} id='menu'>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
-            <MDBNavbarItem>
-              <NavLink to="/team" className='nav-link'>Team</NavLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <NavLink to="/canvas" className='nav-link'>Draw</NavLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <NavLink to="/coloringbook" className='nav-link'>Coloring Book</NavLink>
-            </MDBNavbarItem>
+            {heads.map((head) => (
+              <MDBNavbarItem item key={head.id}>
+                <NavLink to={head.url} className='nav-link link-dark'>
+                  {head.text}
+                </NavLink>
+              </MDBNavbarItem>
+            ))}
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>
