@@ -6,4 +6,7 @@ html, body {
   overflow-x: hidden; /*  Disable scrollbars */
   display: block;  /* No floating content on sides */
 }
+#canvas {
+  height: 20vh;
+}
 
