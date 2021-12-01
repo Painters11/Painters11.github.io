@@ -98,17 +98,17 @@ const Draw = (props) => {
         }
     }
     return (
-        <>
-                <canvas id="canvas"
-                    onMouseDown={handleMouseDown}
-                    onMouseMove={handleMouseMove}
-                    onMouseUp={handleMouseUp}
-                    ref={canvasRef}
-                    >
-                    Paint
-                    
-                </canvas>
-        </>
+      <>
+        <canvas id="canvas"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          ref={canvasRef}
+          >
+            Paint
+            
+        </canvas>
+      </>
 
     )
 }
